@@ -31,6 +31,6 @@ def counting_sort(vetor):
 
     return vetor_saida
 
-
+#vetor com elemento zero
 vetor = [0]
 print(counting_sort(vetor))
