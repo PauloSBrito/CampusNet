@@ -1,0 +1,17 @@
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Java/Maven/Gradle ---
+*.class
+*.log
+target/
+build/
+.gradle/
+
+# --- Operating System Junk ---
+.DS_Store
+Thumbs.db
