@@ -54,4 +54,7 @@ public class Estudante {
     public void setConta(Conta conta) {
         this.conta = conta;
     }
+
+    public void criarConta(Conta conta){
+    }
 }
