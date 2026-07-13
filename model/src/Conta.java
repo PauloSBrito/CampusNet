@@ -87,6 +87,4 @@ public class Conta {
         return this.senha.equals(senhaDigitada);
     }
 
-
-
 }
