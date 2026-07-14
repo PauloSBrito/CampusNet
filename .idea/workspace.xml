@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e67ceeb-fd72-4e3f-bf36-47e918438156" name="Changes" comment="Methods in Estudante e Conta classes modified">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/Publicacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/Publicacao.java" afterDir="false" />
-    </list>
+    <list default="true" id="5e67ceeb-fd72-4e3f-bf36-47e918438156" name="Changes" comment="Publicacao class implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783988596885</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Publicacao class implementation">
+      <option name="closed" value="true" />
+      <created>1783989594246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1783989594246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,7 +146,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Method in Conta class modified" />
     <MESSAGE value="Methods in Estudante e Conta classes modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Methods in Estudante e Conta classes modified" />
+    <MESSAGE value="Publicacao class implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Publicacao class implementation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
