@@ -75,10 +75,6 @@ public class Estudante {
 
         System.out.println("=== Cadastro de Conta - CampusNet ===");
 
-        System.out.print("Digite o ID da conta: ");
-        int idConta = scanner.nextInt();
-        scanner.nextLine();
-
         System.out.print("Digite seu e-mail acadêmico: ");
         String email = scanner.nextLine();
 
@@ -93,7 +89,7 @@ public class Estudante {
 
         // Instancia a nova conta usando os dados lidos.
         // O último parâmetro 'true' define que a conta inicia como ATIVA (conforme o diagrama).
-        this.conta = new Conta(idConta, email, senha, numeroTelefonico, grauAcademico, true);
+        this.conta = new Conta(email, senha, numeroTelefonico, grauAcademico, true);
 
         System.out.println("Conta criada com sucesso para o estudante " + this.nome + "!");
 
