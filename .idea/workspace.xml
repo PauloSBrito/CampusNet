@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e67ceeb-fd72-4e3f-bf36-47e918438156" name="Changes" comment="Create Curtida class methods">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/Comentario.java" afterDir="false" />
-    </list>
+    <list default="true" id="5e67ceeb-fd72-4e3f-bf36-47e918438156" name="Changes" comment="Create Comentario class methods" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +147,8 @@
     <MESSAGE value="Method in Conta class modified" />
     <MESSAGE value="Comunidade class implementing" />
     <MESSAGE value="Create Curtida class methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Curtida class methods" />
+    <MESSAGE value="Create Comentario class methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Comentario class methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
