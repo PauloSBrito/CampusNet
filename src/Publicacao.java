@@ -9,15 +9,15 @@ public class Publicacao {
     private String texto;
     private Estudante autor;
     private LocalDateTime dataDePublicacao;
-    private Comentario[] comentarios;
-    private Curtida[] curtidas;
-    private Compartilhamento[] compartilhamentos;
+    private List<Comentario> comentarios;
+    private List<Curtida> curtidas;
+    private List<Compartilhamento> compartilhamentos;
 
     public Publicacao(String texto, Estudante autor) {
         this.id = contadorId++;
         this.texto = texto;
         this.autor = autor;
-        this.dataPublicacao = LocalDateTime.now(); // Define a data/hora atual da postagem
+        this.dataDePublicacao = LocalDateTime.now(); // Define a data/hora atual da postagem
         this.comentarios = new ArrayList<>();
         this.curtidas = new ArrayList<>();
         this.compartilhamentos = new ArrayList<>();
@@ -58,7 +58,7 @@ public class Publicacao {
     public int getId() { return id; }
     public String getTexto() { return texto; }
     public Estudante getAutor() { return autor; }
-    public LocalDateTime getDataPublicacao() { return dataPublicacao; }
+    public LocalDateTime getDataPublicacao() { return dataDePublicacao; }
     public List<Comentario> getComentarios() { return comentarios; }
 
 }
