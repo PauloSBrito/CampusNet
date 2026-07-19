@@ -17,13 +17,11 @@ public class Publicacao {
         this.id = contadorId++;
         this.texto = texto;
         this.autor = autor;
-        this.dataDePublicacao = LocalDateTime.now(); // Define a data/hora atual da postagem
+        this.dataDePublicacao = LocalDateTime.now();
         this.comentarios = new ArrayList<>();
         this.curtidas = new ArrayList<>();
         this.compartilhamentos = new ArrayList<>();
     }
-
-    // --- Métodos do Diagrama ---
 
     public void editarTexto(String novoTexto) {
         this.texto = novoTexto;
@@ -54,11 +52,28 @@ public class Publicacao {
         return this.curtidas.size();
     }
 
-    // --- Getters ---
+    public List<Interacao> listarInteracoes() {
+        List<Interacao> todas = new ArrayList<>();
+        todas.addAll(comentarios);
+        todas.addAll(curtidas);
+        todas.addAll(compartilhamentos);
+        return todas;
+    }
+
+    public void exibirTodasInteracoes() {
+        List<Interacao> interacoes = listarInteracoes();
+        if (interacoes.isEmpty()) {
+            System.out.println("Nenhuma interação nesta publicação ainda.");
+            return;
+        }
+        for (Interacao interacao : interacoes) {
+            interacao.exibirResumo();
+        }
+    }
+
     public int getId() { return id; }
     public String getTexto() { return texto; }
     public Estudante getAutor() { return autor; }
     public LocalDateTime getDataPublicacao() { return dataDePublicacao; }
     public List<Comentario> getComentarios() { return comentarios; }
-
 }

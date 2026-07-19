@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Estudante {
     protected int id;
     protected String nome;
@@ -25,7 +23,6 @@ public class Estudante {
         this.conta = conta;
     }
 
-    // --- Getters e Setters de Estudante ---
     public int getId() { return id; }
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -44,35 +41,15 @@ public class Estudante {
         return false;
     }
 
-    public void criarConta(){
-        // Verifica se o estudante já possui uma conta ativa
+    // Agora bate com o diagrama: criarConta(conta: Conta): void
+    // Quem monta a Conta (lê do teclado) é o Main; o model só recebe e valida.
+    public void criarConta(Conta conta){
         if (temConta()) {
             System.out.println("Este estudante já possui uma conta cadastrada no CampusNet!");
             return;
         }
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("=== Cadastro de Conta - CampusNet ===");
-
-        System.out.print("Digite seu e-mail acadêmico: ");
-        String email = scanner.nextLine();
-
-        System.out.print("Digite uma senha: ");
-        String senha = scanner.nextLine();
-
-        System.out.print("Digite um número telefônico: ");
-        String numeroTelefonico = scanner.nextLine();
-
-        System.out.print("Digite o seu grau acadêmico (Ex: Graduação, Mestrado): ");
-        String grauAcademico = scanner.nextLine();
-
-        // Instancia a nova conta usando os dados lidos.
-        // O último parâmetro 'true' define que a conta inicia como ATIVA (conforme o diagrama).
-        this.conta = new Conta(email, senha, numeroTelefonico, grauAcademico, true);
-
+        this.conta = conta;
         System.out.println("Conta criada com sucesso para o estudante " + this.nome + "!");
-
     }
 
     public void seguir(Estudante outroEstudante) {
@@ -103,5 +80,4 @@ public class Estudante {
         novoCompartilhamento.compartilhar();
         return novoCompartilhamento;
     }
-
 }

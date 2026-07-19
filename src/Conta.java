@@ -79,7 +79,7 @@ public class Conta {
     }
 
     public void desativarConta() {
-        this.ativa = false;
+        this.status = false;
         System.out.println("Conta desativada.");
     }
 

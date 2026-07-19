@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class Compartilhamento {
+public class Compartilhamento implements Interacao{
     private static int contadorId = 1;
 
     private int id;
@@ -31,4 +31,17 @@ public class Compartilhamento {
     // --- Getters ---
     public int getId() { return id; }
     public String getLegenda() { return legenda; }
+
+
+    // --- Implementação de Interacao ---
+    @Override
+    public Estudante getEstudante() { return estudante; }
+
+    @Override
+    public LocalDateTime getData() { return dataCompartilhamento; }
+
+    @Override
+    public void exibirResumo() {
+        System.out.println("[Compartilhamento] " + estudante.getNome() + " compartilhou dizendo: \"" + legenda + "\"");
+    }
 }

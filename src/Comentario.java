@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class Comentario {
+public class Comentario implements Interacao{
     private static int contadorId = 1;
 
     private int id;
@@ -33,4 +33,16 @@ public class Comentario {
     public int getId() { return id; }
     public String getTexto() { return texto; }
     public Estudante getAutor() { return autor; }
+
+    // --- Implementação de Interacao ---
+    @Override
+    public Estudante getEstudante() { return autor; }
+
+    @Override
+    public LocalDateTime getData() { return dataComentario; }
+
+    @Override
+    public void exibirResumo() {
+        System.out.println("[Comentário] " + autor.getNome() + ": \"" + texto + "\"");
+    }
 }

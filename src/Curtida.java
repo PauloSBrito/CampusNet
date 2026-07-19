@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class Curtida {
+public class Curtida implements Interacao{
     private static int contadorId = 1;
 
     private int id;
@@ -23,7 +23,19 @@ public class Curtida {
         System.out.println("Curtida de " + estudante.getNome() + " removida.");
     }
 
+
     // --- Getters ---
     public int getId() { return id; }
+
+    // --- Implementação de Interacao ---
+    @Override
     public Estudante getEstudante() { return estudante; }
+
+    @Override
+    public LocalDateTime getData() { return dataCurtida; }
+
+    @Override
+    public void exibirResumo() {
+        System.out.println("[Curtida] " + estudante.getNome() + " curtiu a publicação.");
+    }
 }
