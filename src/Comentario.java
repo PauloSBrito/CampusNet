@@ -17,18 +17,6 @@ public class Comentario implements Interacao{
         this.dataComentario = LocalDateTime.now();
     }
 
-    // --- Métodos do Diagrama ---
-
-    public void editarTexto(String novoTexto) {
-        this.texto = novoTexto;
-        System.out.println("Comentário editado.");
-    }
-
-    public void apagarTexto() {
-        this.texto = "[Comentário removido]";
-        System.out.println("O texto do comentário foi apagado.");
-    }
-
     // --- Getters ---
     public int getId() { return id; }
     public String getTexto() { return texto; }
@@ -45,4 +33,17 @@ public class Comentario implements Interacao{
     public void exibirResumo() {
         System.out.println("[Comentário] " + autor.getNome() + ": \"" + texto + "\"");
     }
+
+    // --- Métodos do Diagrama ---
+
+    public void editarTexto(String novoTexto) {
+        this.texto = novoTexto;
+        System.out.println("Comentário editado.");
+    }
+
+    public void apagarTexto() {
+        this.texto = "[Comentário removido]";
+        System.out.println("O texto do comentário foi apagado.");
+    }
+
 }

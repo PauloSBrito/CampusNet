@@ -5,11 +5,20 @@ public class Curtida implements Interacao{
 
     private int id;
     private Estudante estudante;
+    private Publicacao publicacao;
     private LocalDateTime dataCurtida;
 
     public Curtida(Estudante estudante) {
         this.id = contadorId++;
         this.estudante = estudante;
+        this.dataCurtida = LocalDateTime.now();
+    }
+
+    // para que o método em Dataseeder funcione
+    public Curtida(Estudante estudante, Publicacao publicacao) {
+        this.id = contadorId++;
+        this.estudante = estudante;
+        this.publicacao = publicacao;
         this.dataCurtida = LocalDateTime.now();
     }
 

@@ -58,5 +58,49 @@ public class DataSeeder {
         }
 
         return estudantes;
+
+    }
+    public static List<Publicacao> carregarPublicacoesIniciais (List<Estudante> estudantes) {
+        List<Publicacao> feedInicial = new ArrayList<>();
+
+        // Se por algum motivo a lista de estudantes estiver vazia, não cria os posts
+        if (estudantes == null || estudantes.size() < 3) {
+            return feedInicial;
+        }
+
+        // Pega alguns estudantes da lista do CSV para serem os autores/interagentes
+        Estudante e1 = estudantes.get(0); // Ex: Ana Silva
+        Estudante e2 = estudantes.get(1); // Ex: Carlos Eduardo
+        Estudante e3 = estudantes.get(2); // Ex: Beatriz Lima
+
+        // 1. Criar as Publicações
+        Publicacao p1 = new Publicacao("Primeiro dia de aula no CampusNet! Ansioso para o semestre 🚀", e1);
+        Publicacao p2 = new Publicacao("Alguém tem o resumo da aula de POO?", e2);
+
+        // 2. Adicionar Comentários nas publicações
+        Comentario c1 = new Comentario("Boa sorte no semestre, Ana!", e1, p1);
+        Comentario c2 = new Comentario( "Seja bem-vinda!", e3, p1);
+        Comentario c3 = new Comentario( "Tenho sim, Carlos! Te mando no grupo do curso.", e1, p2);
+
+        p1.adicionarComentario(c1);
+        p1.adicionarComentario(c2);
+        p2.adicionarComentario(c3);
+
+        // 3. Adicionar Curtidas
+        Curtida curtida1 = new Curtida(e2, p1);
+        Curtida curtida2 = new Curtida(e3, p1);
+        Curtida curtida3 = new Curtida(e1, p2);
+
+        p1.adicionarCurtida(curtida1);
+        p1.adicionarCurtida(curtida2);
+        p2.adicionarCurtida(curtida3);
+
+        // 4. Guardar no feed inicial
+        feedInicial.add(p1);
+        feedInicial.add(p2);
+
+        System.out.println("Sucesso: " + feedInicial.size() + " publicações iniciais geradas no feed!");
+
+        return feedInicial;
     }
 }
