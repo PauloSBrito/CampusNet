@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,13 +5,12 @@ import java.util.Scanner;
 public class Main2 {
     private static Scanner teclado = new Scanner(System.in);
 
-    // "Banco de dados" em memória, compartilhado por todo o programa
-    private static List<Estudante> baseEstudantes = new ArrayList<>();
+    // Carrega o "banco de dados" em memória diretamente via DataSeeder
+    private static List<Estudante> baseEstudantes = DataSeeder.carregarEstudantesDoCSV("estudantes.csv");
     private static List<Publicacao> feed = new ArrayList<>();
     private static List<Comunidade> comunidades = new ArrayList<>();
 
     public static void main(String[] args) {
-        carregarEstudantesDoCsv("estudantes.csv");
 
         Estudante estudanteLogado = fazerLogin();
         if (estudanteLogado == null) {
@@ -28,67 +24,31 @@ public class Main2 {
         System.out.println("\n=== Fim da sessão no CampusNet ===");
     }
 
-    // ==================== CARGA DE DADOS ====================
-
-    private static void carregarEstudantesDoCsv(String caminhoArquivo) {
-        System.out.println("=== CAMPUSNET: Inicializando Sistema ===");
-        System.out.println("Carregando banco de dados de estudantes...");
-
-        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
-            String linha;
-            boolean primeiraLinha = true; // Para ignorar o cabeçalho do CSV
-
-            while ((linha = br.readLine()) != null) {
-                // Remove o caractere invisível de marcação UTF-8 BOM, se existir
-                if (linha.startsWith("\uFEFF")) {
-                    linha = linha.substring(1);
-                }
-
-                // Ignora a linha do cabeçalho (ex: "id,nome,idade,curso,matricula")
-                if (primeiraLinha) {
-                    primeiraLinha = false;
-                    continue;
-                }
-
-                if (linha.trim().isEmpty()) continue;
-
-                String[] dados = linha.split(",");
-
-                try {
-                    int id = Integer.parseInt(dados[0].trim());
-                    String nome = dados[1].trim();
-                    int idade = Integer.parseInt(dados[2].trim());
-                    String curso = dados[3].trim();
-                    String matricula = dados[4].trim();
-
-                    baseEstudantes.add(new Estudante(id, nome, curso, matricula));
-                } catch (NumberFormatException e) {
-                    // Ignora linhas que não tenham números válidos nos campos inteiros
-                    System.err.println("Aviso: Linha ignorada por formato numérico inválido.");
-                }
-            }
-            System.out.println("Sucesso! " + baseEstudantes.size() + " estudantes carregados.");
-        } catch (IOException e) {
-            System.err.println("Erro crítico ao ler o arquivo CSV: " + e.getMessage());
-            System.exit(1);
-        }
-    }
-
     // ==================== LOGIN / CONTA ====================
 
     private static Estudante fazerLogin() {
         System.out.println("\n--- BEM-VINDO AO CAMPUSNET ---");
         System.out.print("Digite o seu número de matrícula para entrar: ");
-        String matriculaDigitada = teclado.nextLine();
+
+        // Remove espaços e caracteres de controle invisíveis
+        String matriculaDigitada = teclado.nextLine().replaceAll("[^a-zA-Z0-9]", "").trim();
 
         for (Estudante est : baseEstudantes) {
-            if (est.getMatricula().equals(matriculaDigitada)) {
+            // Garante que a matrícula armazenada também seja limpa antes de comparar
+            String matriculaCadastrada = est.getMatricula().replaceAll("[^a-zA-Z0-9]", "").trim();
+
+            if (matriculaCadastrada.equalsIgnoreCase(matriculaDigitada)) {
                 System.out.println("\nOlá, " + est.getNome() + " (" + est.getCurso() + ")!");
                 return est;
             }
         }
 
-        System.out.println("Matrícula não cadastrada no sistema. Encerrando.");
+        System.out.println("\n[!] Matrícula não encontrada.");
+        System.out.println("Lista de matrículas disponíveis para teste:");
+        for (Estudante est : baseEstudantes) {
+            System.out.println(" - " + est.getNome() + " | Matrícula: " + est.getMatricula());
+        }
+
         return null;
     }
 
@@ -324,7 +284,7 @@ public class Main2 {
                     Publicacao publicacao = new Publicacao(texto, estudanteLogado);
                     estudanteLogado.publicar(publicacao);
                     comunidade.criarPublicacao(publicacao);
-                    feed.add(publicacao); // também aparece no feed geral
+                    feed.add(publicacao);
                 }
                 case 3 -> {
                     System.out.println("Membros:");

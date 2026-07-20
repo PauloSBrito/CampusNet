@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9dd51c1-1737-4be9-8b6b-3af51e6f848f" name="Changes" comment="update first line from csv">
+    <list default="true" id="d9dd51c1-1737-4be9-8b6b-3af51e6f848f" name="Changes" comment="update main with new login function implementation">
+      <change afterPath="$PROJECT_DIR$/src/DataSeeder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estudante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update first line from csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="update first line from csv" />
+    <MESSAGE value="update main with new login function implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="update main with new login function implementation" />
   </component>
 </project>
