@@ -36,17 +36,36 @@ public class Main2 {
 
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
+            boolean primeiraLinha = true; // Para ignorar o cabeçalho do CSV
+
             while ((linha = br.readLine()) != null) {
+                // Remove o caractere invisível de marcação UTF-8 BOM, se existir
+                if (linha.startsWith("\uFEFF")) {
+                    linha = linha.substring(1);
+                }
+
+                // Ignora a linha do cabeçalho (ex: "id,nome,idade,curso,matricula")
+                if (primeiraLinha) {
+                    primeiraLinha = false;
+                    continue;
+                }
+
                 if (linha.trim().isEmpty()) continue;
 
                 String[] dados = linha.split(",");
-                int id = Integer.parseInt(dados[0].trim());
-                String nome = dados[1].trim();
-                int idade = Integer.parseInt(dados[2].trim());
-                String curso = dados[3].trim();
-                String matricula = dados[4].trim();
 
-                baseEstudantes.add(new Estudante(id, nome, idade, curso, matricula));
+                try {
+                    int id = Integer.parseInt(dados[0].trim());
+                    String nome = dados[1].trim();
+                    int idade = Integer.parseInt(dados[2].trim());
+                    String curso = dados[3].trim();
+                    String matricula = dados[4].trim();
+
+                    baseEstudantes.add(new Estudante(id, nome, curso, matricula));
+                } catch (NumberFormatException e) {
+                    // Ignora linhas que não tenham números válidos nos campos inteiros
+                    System.err.println("Aviso: Linha ignorada por formato numérico inválido.");
+                }
             }
             System.out.println("Sucesso! " + baseEstudantes.size() + " estudantes carregados.");
         } catch (IOException e) {
@@ -107,7 +126,7 @@ public class Main2 {
         int opcao;
         do {
             System.out.println("\n=========================================");
-            System.out.println("  CampusNet - Logado como: " + estudanteLogado.getNome());
+            System.out.println("   CampusNet - Logado como: " + estudanteLogado.getNome());
             System.out.println("=========================================");
             System.out.println("1 - Ver Feed (publicações)");
             System.out.println("2 - Fazer uma publicação");

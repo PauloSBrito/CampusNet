@@ -27,7 +27,7 @@ public class Main {
                 String curso = dados[3].trim();
                 String matricula = dados[4].trim();
 
-                Estudante estudante = new Estudante(id, nome, idade, curso, matricula);
+                Estudante estudante = new Estudante(id, nome, curso, matricula);
                 baseEstudantes.add(estudante);
             }
             System.out.println("Sucesso! " + baseEstudantes.size() + " estudantes carregados.");

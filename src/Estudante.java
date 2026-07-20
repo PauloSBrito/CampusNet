@@ -6,7 +6,7 @@ public class Estudante {
     protected String matricula;
     protected Conta conta;
 
-    public Estudante(int id, String nome, int idade, String curso, String matricula) {
+    public Estudante(int id, String nome, String curso, String matricula) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
