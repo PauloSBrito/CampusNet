@@ -7,7 +7,7 @@ public class Main2 {
 
     // Carrega o "banco de dados" em memória diretamente via DataSeeder
     private static List<Estudante> baseEstudantes = DataSeeder.carregarEstudantesDoCSV("estudantes.csv");
-    private static List<Publicacao> feed = new ArrayList<>();
+    private static List<Publicacao> feed = DataSeeder.carregarPublicacoesIniciais(baseEstudantes);
     private static List<Comunidade> comunidades = new ArrayList<>();
 
     public static void main(String[] args) {
