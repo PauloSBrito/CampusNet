@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9dd51c1-1737-4be9-8b6b-3af51e6f848f" name="Changes" comment="update main with new login function implementation">
+    <list default="true" id="d9dd51c1-1737-4be9-8b6b-3af51e6f848f" name="Changes" comment="main changed to work with new feed implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estudante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estudante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSeeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +70,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main2" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="CampusNet" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,6 +120,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update first line from csv" />
     <MESSAGE value="update main with new login function implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="update main with new login function implementation" />
+    <MESSAGE value="Access modifiers changed to private from protected" />
+    <MESSAGE value="main changed to work with new feed implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="main changed to work with new feed implementation" />
   </component>
 </project>

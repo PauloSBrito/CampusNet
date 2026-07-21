@@ -11,10 +11,10 @@ public class DataSeeder {
 
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
-            boolean primeiraLinha = true; // Para pular o cabeçalho (id,nome,curso,matricula)
+            boolean primeiraLinha = true; // Pula o cabeçalho de CSV
 
             while ((linha = br.readLine()) != null) {
-                // Remove o caractere invisível UTF-8 BOM, se existir
+                // Tratar entrada de dados UTF-8
                 if (linha.startsWith("\uFEFF")) {
                     linha = linha.substring(1);
                 }
