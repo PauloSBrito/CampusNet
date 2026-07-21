@@ -20,9 +20,8 @@ javac -version
 ```
 
 ---
-### Diagrama de Estado
-<img width="958" height="436" alt="image" src="https://github.com/user-attachments/assets/a35d6479-af2b-401a-b9c8-7996af3a2f04" />
-
+### Diagramas
+<img width="2228" height="4471" alt="diagramas drawio" src="https://github.com/user-attachments/assets/328ef48c-e7f8-4796-966a-2e28b7e63ac7" />
 
 ---
 
