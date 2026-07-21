@@ -1,10 +1,10 @@
 public class Estudante {
-    protected int id;
-    protected String nome;
-    protected int idade;
-    protected String curso;
-    protected String matricula;
-    protected Conta conta;
+    private int id;
+    private String nome;
+    private int idade;
+    private String curso;
+    private String matricula;
+    private Conta conta;
 
     public Estudante(int id, String nome, String curso, String matricula) {
         this.id = id;
@@ -41,8 +41,6 @@ public class Estudante {
         return false;
     }
 
-    // Agora bate com o diagrama: criarConta(conta: Conta): void
-    // Quem monta a Conta (lê do teclado) é o Main; o model só recebe e valida.
     public void criarConta(Conta conta){
         if (temConta()) {
             System.out.println("Este estudante já possui uma conta cadastrada no CampusNet!");
